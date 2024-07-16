@@ -25,113 +25,33 @@ When you are done, please upload the following:
 - Queries in markdown or Query result screenshots
 
 ## Iteration 1: Basic Select Queries
-**Purpose:** As a new recruit, you need to familiarize yourself with the Rebel Alliance's database structure. Understanding the existing data is crucial for effective analysis and decision-making.
+As a new recruit, you need to familiarize yourself with the Rebel Alliance's database structure. Understanding the existing data is crucial for effective analysis and decision-making.
 
-1. Write a query to select all columns from the `Planets` table.
-    ```sql
-    SELECT * FROM Planets;
-    ```
-2. Write a query to select distinct job titles from the `Characters` table.
-    ```sql
-    SELECT DISTINCT job_title FROM Characters;
-    ```
-3. Write a query to concatenate the `character_name` and `job_title` of all characters.
-    ```sql
-    SELECT character_name || ' - ' || job_title AS character_job FROM Characters;
-    ```
+1.1. Write a query to select distinct job titles from the `Characters` table.
+  
+1.2. Write a query to concatenate the `character_name` and `job_title` of all characters.
+ 
 
 ## Iteration 2: Where Queries
-**Purpose:** To conduct targeted searches within the Rebel database, you must master filtering data based on specific criteria. This skill is essential for retrieving relevant information swiftly.
+
+To conduct targeted searches within the Rebel database, you must master filtering data based on specific criteria. This skill is essential for retrieving relevant information swiftly.
 
 1. Write a query to select all ships that are in service with the Rebel Alliance.
-    ```sql
-    SELECT * FROM Ships WHERE 'Rebel Alliance' = ANY(in_service);
-    ```
+  
 2. Write a query to select all characters born between 50BBY and 20BBY.
-    ```sql
-    SELECT * FROM Characters WHERE birth_date BETWEEN '50BBY' AND '20BBY';
-    ```
+  
 3. Write a query to select all planets in the 'Outer Rim' region.
-    ```sql
-    SELECT * FROM Planets WHERE region = 'Outer Rim';
-    ```
+  
 4. Write a query to select all characters where the job title is either 'Jedi Knight' or 'Captain'.
-    ```sql
-    SELECT * FROM Characters WHERE job_title IN ('Jedi Knight', 'Captain');
-    ```
 
-## Iteration 3: Advanced Select Queries
-**Purpose:** Advanced queries allow you to extract more complex and detailed information, which is critical for strategic planning and intelligence gathering.
 
-1. Write a query to select the names of all characters along with the name of their home planet.
-    ```sql
-    SELECT character_name, home_planet FROM Characters;
-    ```
-2. Write a query to count the number of ships by type.
-    ```sql
-    SELECT ship_type, COUNT(*) AS ship_count FROM Ships GROUP BY ship_type;
-    ```
-3. Write a query to find the average capacity of all ships.
-    ```sql
-    SELECT AVG(capacity) AS average_capacity FROM Ships;
-    ```
 
-## Iteration 4: Inserting Data
-**Purpose:** The ability to insert new data into the database is crucial for keeping records up-to-date and expanding the dataset with new information as it becomes available.
 
-1. Write a query to insert a new planet into the `Planets` table.
-    ```sql
-    INSERT INTO Planets (planet_id, planet_name, region, population, discovered_date)
-    VALUES (11, 'Dagobah', 'Outer Rim', 0, '1980-05-21');
-    ```
-2. Write a query to insert a new character into the `Characters` table.
-    ```sql
-    INSERT INTO Characters (character_id, character_name, affiliation, home_planet, birth_date, job_title)
-    VALUES (12, 'Ahsoka Tano', 'Rebel Alliance', 'Shili', '36BBY', 'Jedi Knight');
-    ```
 
-## Iteration 5: Updating and Deleting Data
-**Purpose:** As the data evolves, you need to be able to update or delete records to maintain the accuracy and relevance of the database.
 
-1. Write a query to update the population of 'Coruscant' to 1,200,000,000.
-    ```sql
-    UPDATE Planets SET population = 1200000000 WHERE planet_name = 'Coruscant';
-    ```
-2. Write a query to delete all battles that resulted in a 'Stalemate'.
-    ```sql
-    DELETE FROM Battles WHERE outcome = 'Stalemate';
-    ```
 
-## Iteration 6: Data Aggregation and Analysis
-**Purpose:** Aggregating data helps in summarizing vast amounts of information, making it easier to interpret and analyze for strategic decisions.
 
-1. Write a query to find the total population of all planets in the 'Core Worlds' region.
-    ```sql
-    SELECT SUM(population) AS total_population FROM Planets WHERE region = 'Core Worlds';
-    ```
-2. Write a query to find the maximum and minimum capacities of ships in service with the Rebel Alliance.
-    ```sql
-    SELECT MAX(capacity) AS max_capacity, MIN(capacity) AS min_capacity FROM Ships WHERE 'Rebel Alliance' = ANY(in_service);
-    ```
 
-## Iteration 7: Complex Queries and Joins
-**Purpose:** Understanding relationships between different data tables allows you to perform complex queries that can reveal critical insights about the interconnected data.
-
-1. Write a query to find all characters who participated in a mission, including their mission names and outcomes.
-    ```sql
-    SELECT c.character_name, m.mission_name, b.outcome
-    FROM Characters c
-    JOIN Commanders cm ON c.character_id = cm.commander_id
-    JOIN Missions m ON cm.assigned_mission = m.mission_id
-    JOIN Battles b ON m.mission_id = b.battle_id;
-    ```
-2. Write a query to list all missions led by a specific commander, including mission names and their start and end dates.
-    ```sql
-    SELECT m.mission_name, m.start_date, m.end_date
-    FROM Missions m
-    JOIN Commanders cm ON m.mission_id = cm.assigned_mission
-    WHERE cm.commander_name = 'Lando Calrissian';
-    ```
 
 ## Iteration 8: Hacking the Imperial Database
 **Purpose:** The Rebel Alliance has tasked you with hacking into the Imperial database to retrieve sensitive information. During this mission, you uncover that Kyra Vandar, an Imperial, shares your last name and has a connection to your past. Through a series of queries, you discover he is your father.
