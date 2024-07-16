@@ -1,16 +1,23 @@
 # LAB-MYSQL-Basic-Queries
 
+<div style="background-image: url('https://github.com/user-attachments/assets/90ccf1f2-2fa0-48db-81e9-78e62b879fd2'); padding: 20px; background-size: cover;">
+  
 ## Introduction
 **Note:** This activity can be done in pairs or independently.
 
 At Reboot Academy, our goal is to equip you with practical skills in database management. In this exercise, we will explore SQL, a fundamental tool for data management, within the exciting context of the Star Wars universe.
-
+</div>
 ## Story:
 You have been recruited by the Rebel Alliance as a data specialist. After proving your skills in handling crucial data, you have been promoted to a senior data analyst. Your new mission involves handling more confidential and advanced data files. The success of the Rebel Alliance in their fight against the Galactic Empire depends on your ability to manage and analyze this data efficiently.
 
 Recently, the Rebel Intelligence has uncovered an opportunity to hack into an Imperial database. This mission is of utmost importance, as the data retrieved could turn the tide in favor of the Rebel Alliance. You are tasked with extracting, manipulating, and analyzing data from both the Rebel and Imperial databases. Your work will directly impact strategic decisions and operational effectiveness in key battles and missions.
 
-During this mission, you uncover shocking personal information that could change everything. Step by step, through your queries, you discover that an Imperial named Kyra Vandar has a connection to your past. This revelation unfolds as you dig deeper into the data, revealing that he is your father.
+During this mission, you uncover shocking personal information that could change everything. Step by step, through your queries, you discover that an Imperial named Kyra Vandar has a connection to your past. This revelation unfolds as you dig deeper into the data ...
+
+
+<img src="https://github.com/user-attachments/assets/90ccf1f2-2fa0-48db-81e9-78e62b879fd2" alt="Descripción de la imagen" width="300" >
+
+
 
 ## Objectives:
 - Define a schema that adheres to the operational requirements of the Rebel Alliance.
@@ -27,7 +34,8 @@ When you are done, please upload the following:
 ## Iteration 0: Import the Imperial database 
 
 ## Iteration 1: Basic Select Queries
-As a new recruit, you need to familiarize yourself with the Rebel Alliance's database structure. Understanding the existing data is crucial for effective analysis and decision-making.
+
+You need to familiarise yourself with the new imperial database although it does not look very different from the ones used before. Select the following information
 
 1.1. Write a query to select distinct job titles from the `Characters` table.
   
@@ -36,7 +44,7 @@ As a new recruit, you need to familiarize yourself with the Rebel Alliance's dat
 
 ## Iteration 2: Where Queries
 
-To conduct targeted searches within the Rebel database, you must master filtering data based on specific criteria. This skill is essential for retrieving relevant information swiftly.
+To conduct targeted searches within the Imperial database, you must master filtering data based on specific criteria. This skill is essential for retrieving relevant information swiftly.
 
 1. Find planets whose names end with "ar" and have a population greater than 1,000,000
 Using the LIKE clause and an additional condition on the population.
