@@ -1,1 +1,1 @@
-# LAB-MYSQL-Basic-Example
+# LAB-MYSQL-Basic-Queries
