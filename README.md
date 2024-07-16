@@ -1,11 +1,17 @@
+![](https://user-images.githubusercontent.com/970858/63474771-d6734700-c469-11e9-83bb-9429da563909.png)
+
 # LAB-MYSQL-Basic-Queries
-
-
   
 ## Introduction
 **Note:** This activity can be done in pairs or independently.
 
 At Reboot Academy, our goal is to equip you with practical skills in database management. In this exercise, we will explore SQL, a fundamental tool for data management, within the exciting context of the Star Wars universe.
+
+## Requirements
+- Learn how to fork this repo.
+- Clone this repo into your `code/labs` folder.
+- Have MySQL installed.
+- Have MySQL Workbench installed or any other MySQL client.
 
 ## Story:
 <img src="Rebelds-fall.jpg" alt="Descripción de la imagen" width="200" align="right">
@@ -16,23 +22,8 @@ Recently, the Rebel Intelligence has uncovered an opportunity to hack into an Im
 
 During this mission, you uncover shocking personal information that could change everything. Step by step, through your queries, you discover that an Imperial named Kyra Vandar has a connection to your past. This revelation unfolds as you dig deeper into the data ...
 
-
-
-
-
-
-
-
-## Objectives:
-- Define a schema that adheres to the operational requirements of the Rebel Alliance.
-- Implement the schema in MySQL.
-- Execute and capture the results of specific queries to gather intelligence.
-- Utilize advanced SQL techniques to manipulate and retrieve data.
-- Hack into the Imperial database and extract crucial information.
-
 ## Deliverables:
 When you are done, please upload the following:
-- ER diagram including attributes and data types
 - Queries in markdown or Query result screenshots
 
 ## Iteration 0: Import the Imperial database 
@@ -87,22 +78,37 @@ First, create a new table Old_Planets with the same structure as Planets. Then,C
 1. Combine DELETE with LIMIT to Remove the First 2 Characters Born After the Year 2000
 2. Combine DELETE with LIMIT and OFFSET to Skip the First 3 Characters and Remove the Next 2 with a Job Title of 'Captain' and Born After the Year 2000
 
-
 ## Iteration 5: The encrypted note
 
 A suspicious note has ended up on your desk, it is written with many symbols that you don't understand and seems to have been sent by the empire. In it you manage to make out 3 words Murder , Fahter  y Vandar
 
 <img src="https://github.com/user-attachments/assets/320d1656-181a-4372-88b4-b753373b05d3" width="600" >
 
-5.1 Identifying Who is Vandar
+5.1 Identifying whith a query Who is Vandar in the the characters table.
 
-5.2 search the database to see if she has had children.
+5.2 Search in the children table to see if Vandar has had any children or if there are any with a null name.
 
-5.3 search the database for any child born in 29 years ago since 2024, your age 
+5.3 There are many children with null in the database, see if there are any that also match your date of birth 1995-09-21
 
-5.4 search if there are any missing after your 
+5.4 Search with id_Character for a match in the characters table to confirm your suspicions.
+
+There is no doubt, the note was right, your father is Kyra Vandar and belonged to the dark side, the anger invades you, you leave the rebel alliances and start a long road alone with no direction....
 
 ## Bonus 
 
 1. Write a query to find the total population of all planets in the 'Core Worlds' region.
 2. Write a query to find the maximum and minimum capacities of ships in service with the Rebel Alliance.
+
+## Submission
+
+Upon completion, run the following commands:
+
+```
+$ git add .
+$ git commit -m "done"
+$ git push origin main
+```
+
+Then create a Pull Request!!
+
+![happy_coding](https://user-images.githubusercontent.com/970858/63899010-c23fc480-c9ea-11e9-84a2-542907e42362.png)
