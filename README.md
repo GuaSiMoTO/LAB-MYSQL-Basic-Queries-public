@@ -24,6 +24,8 @@ When you are done, please upload the following:
 - ER diagram including attributes and data types
 - Queries in markdown or Query result screenshots
 
+## Iteration 0: Import the Imperial database 
+
 ## Iteration 1: Basic Select Queries
 As a new recruit, you need to familiarize yourself with the Rebel Alliance's database structure. Understanding the existing data is crucial for effective analysis and decision-making.
 
@@ -36,65 +38,56 @@ As a new recruit, you need to familiarize yourself with the Rebel Alliance's dat
 
 To conduct targeted searches within the Rebel database, you must master filtering data based on specific criteria. This skill is essential for retrieving relevant information swiftly.
 
-1. Write a query to select all ships that are in service with the Rebel Alliance.
+1. Find planets whose names end with "ar" and have a population greater than 1,000,000
+Using the LIKE clause and an additional condition on the population.
   
-2. Write a query to select all characters born between 50BBY and 20BBY.
+2. Find characters whose names contain the word "Skywalker" and were born after the year 2000
   
-3. Write a query to select all planets in the 'Outer Rim' region.
+3. Find missions with a defined status (not NULL) that ended before the year 2000
   
-4. Write a query to select all characters where the job title is either 'Jedi Knight' or 'Captain'.
+4. Find starships whose names contain the word "Falcon", have a defined service (not NULL), and a capacity greater than 5
+
+5. Find battles that occurred in the year 1983 and do not have a defined outcome (NULL value)
+  
+6. Find characters affiliated with the "Rebel Alliance" whose job title is not defined (NULL value) and were born on the planet "Tatooine"
+
+
+## Iteration 3: Order and limit Queries
+
+1. Order Battles by Date in Descending Order
+2. Combine ORDER BY with WHERE to Find and Sort Characters Born After 2000
+3. Limit the Number of Results for Planets to 5
+4. Use LIMIT with OFFSET to Skip the First 5 Characters and Return the Next 5
+5. Combine LIMIT with ORDER BY and WHERE to Find and Limit Battles
+
+## Iteration 4: Copy Data from Planets to a New Table Old_Planets
+First, create a new table Old_Planets with the same structure as Planets. Then,Combine INSERT with SELECT to insert data from Planets where the population is greater than 1,000,000.
+
+## Iteration 5: Advanced Delete
+
+1. Combine DELETE with LIMIT to Remove the First 2 Characters Born After the Year 2000
+2. Combine DELETE with LIMIT and OFFSET to Skip the First 3 Characters and Remove the Next 2 with a Job Title of 'Captain' and Born After the Year 2000
+
+
+## Iteration 7: The encrypted note
+
+A suspicious note has ended up on your desk, it is written with many symbols that you don't understand and seems to have been sent by the empire. In it you manage to make out 3 words Murder , Fahter  y Vandar
+
+![encrypt-letter](https://github.com/user-attachments/assets/320d1656-181a-4372-88b4-b753373b05d3)
 
 
 
 
+7.1 Identifying Who is Vandar
+
+7.2 search the database to see if she has had children.
+
+7.3 search the database for any child born in 29 years ago since 2024, your age 
+
+7.4 search if there are any missing after your 
 
 
 
-
-
-
-## Iteration 8: Hacking the Imperial Database
-**Purpose:** The Rebel Alliance has tasked you with hacking into the Imperial database to retrieve sensitive information. During this mission, you uncover that Kyra Vandar, an Imperial, shares your last name and has a connection to your past. Through a series of queries, you discover he is your father.
-
-### Step 1: Identifying Imperial Commanders
-**Mission:** Find all Imperial commanders to see if there are any familiar names.
-
-1. Write a query to extract the names and ranks of all Imperial commanders.
-    ```sql
-    SELECT commander_name, status FROM ImperialCommanders;
-    ```
-
-### Step 2: Narrowing Down by Last Name
-**Mission:** Focus on commanders who share your last name, Vandar.
-
-2. Write a query to find Imperial commanders with the last name 'Vandar'.
-    ```sql
-    SELECT commander_name, status FROM ImperialCommanders WHERE commander_name LIKE '%Vandar';
-    ```
-
-### Step 3: Investigating Family Ties
-**Mission:** Determine if Kyra Vandar has any family members in the Imperial records.
-
-3. Write a query to find any children of Kyra Vandar who match your birth date.
-    ```sql
-    SELECT child_name, birth_date, home_planet FROM ImperialFamilyRecords WHERE parent_name = 'Kyra Vandar' AND birth_date = '[Your Birth Date]';
-    ```
-
-### Step 4: Confirming the Connection
-**Mission:** Verify the home planet and other details to confirm that the child of Kyra Vandar is you.
-
-4. Write a query to retrieve details about the child of Kyra Vandar, including home planet and birth date.
-    ```sql
-    SELECT child_name, birth_date, home_planet FROM ImperialFamilyRecords WHERE parent_name = 'Kyra Vandar';
-    ```
-
-### Step 5: Final Revelation
-**Mission:** Cross-reference the information with your own records to confirm that Kyra Vandar is your father.
-
-5. Write a final query to match your details with the Imperial records.
-    ```sql
-    SELECT * FROM RebelPersonalRecords WHERE name = '[Your Name]' AND birth_date = '[Your Birth Date]' AND home_planet = '[Your Home Planet]';
-    ```
 
 ## Bonus Queries
 1. Write a query to find all characters affiliated with the Rebel Alliance and born before 20BBY.
