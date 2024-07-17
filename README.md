@@ -14,7 +14,8 @@ At Reboot Academy, our goal is to equip you with practical skills in database ma
 - Have MySQL Workbench installed or any other MySQL client.
 
 ## Story:
-<img src="Rebelds-fall.jpg" alt="Descripción de la imagen" width="200" align="right">
+
+<img src="https://github.com/user-attachments/assets/8a6749c3-7281-4345-a4e9-40dfe7167906" alt="Descripción de la imagen" width="200" align="right">
 
 You have been recruited by the Rebel Alliance as a data specialist. After proving your skills in handling crucial data, you have been promoted to a senior data analyst. Your new mission involves handling more confidential and advanced data files. The success of the Rebel Alliance in their fight against the Galactic Empire depends on your ability to manage and analyze this data efficiently.
 
