@@ -97,8 +97,7 @@ There is no doubt, the note was right, your father is Kyra Vandar and belonged t
 
 ## Bonus 
 
-1. Write a query to find the total population of all planets in the 'Core Worlds' region.
-2. Write a query to find the maximum and minimum capacities of ships in service with the Rebel Alliance.
+[Find Sql's killer](https://mystery.knightlab.com/)
 
 ## Submission
 
