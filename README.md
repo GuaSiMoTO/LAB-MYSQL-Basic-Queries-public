@@ -40,7 +40,7 @@ You need to familiarise yourself with the new imperial database although it does
 
 ## Iteration 2: Where,Order and limit Queries
 
-<img src="https://github.com/user-attachments/assets/7670c093-d18f-4b79-862c-704ade74f109" alt="Descripción de la imagen" width="330" height="1000" align="right">
+<img src="https://github.com/user-attachments/assets/7670c093-d18f-4b79-862c-704ade74f109" alt="Descripción de la imagen" width="330" height="800" align="right">
 
 To conduct targeted searches within the Imperial database, you must master filtering data based on specific criteria. This skill is essential for retrieving relevant information swiftly.
 
