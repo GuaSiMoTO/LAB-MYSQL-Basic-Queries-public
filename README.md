@@ -44,7 +44,7 @@ You need to familiarise yourself with the new imperial database although it does
 
 To conduct targeted searches within the Imperial database, you must master filtering data based on specific criteria. This skill is essential for retrieving relevant information swiftly.
 
-1. Find planets whose names end with "ar" and have a population greater than 1,000,000
+1. Find planets whose names end with "ar" or have a population greater than 1,000,000
 Using the LIKE clause and an additional condition on the population.
   
 2. Find characters whose names contain the word "Skywalker" and were born after the year 2000
