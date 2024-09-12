@@ -77,7 +77,7 @@ First, create a new table Old_Planets with the same structure as Planets. Then,C
 ## Iteration 4: Advanced Delete
 
 1. Combine DELETE with LIMIT to Remove the First 2 Characters Born After the Year 2000
-2. Combine DELETE with LIMIT to Skip the First 3 Characters and Remove the Next 2 with a Job Title of 'Captain' and Born After the Year 2000
+2. Combine DELETE with LIMIT and OFFSET to Skip the First 3 Characters and Remove the Next 2 with a Job Title of 'Captain' and Born After the Year 2000
 
 ## Iteration 5: The encrypted note
 
