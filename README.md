@@ -49,7 +49,7 @@ Using the LIKE clause and an additional condition on the population.
   
 2. Find characters whose names contain the word "Skywalker" and were born after the year 2000
 
-3. Find missions with a defined status (not NULL) that ended before the year 2000
+3. Find missions with a defined status (not NULL) that ended after the year 2000
   
 4. Find starships whose names contain the word "Falcon", have a defined service (not NULL), and a capacity greater than 5
 
