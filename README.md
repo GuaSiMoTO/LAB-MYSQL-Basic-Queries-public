@@ -25,7 +25,7 @@ During this mission, you uncover shocking personal information that could change
 
 ## Deliverables:
 When you are done, please upload the following:
-- Queries in markdown or Query result screenshots
+- Queries in markdown in a .txt file.
 
 ## Iteration 0: Import the Imperial database 
 
