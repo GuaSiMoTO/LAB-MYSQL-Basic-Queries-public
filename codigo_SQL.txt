@@ -45,8 +45,50 @@ ORDER BY birth_date ASC;
 SELECT * FROM Planets LIMIT 5;
 
 -- 10.Use LIMIT with OFFSET to Skip the First 5 Characters and Return the Next 5
-
+SELECT * FROM Characters
+LIMIT 5 OFFSET 5;
 
 -- 11.Combine LIMIT with ORDER BY and WHERE to Find and Limit Battles
+SELECT * FROM Battles
+WHERE outcome = 'Victory'
+ORDER By `date` ASC
+LIMIT 3;
 
 -- Iteration 3: Copy Data from Planets to a New Table Old_Planets
+CREATE TABLE Old_Planets AS SELECT * FROM Planets 
+WHERE population > 1000000;
+
+-- Iteration 4: Advanced Delete
+-- 1.Combine DELETE with LIMIT to Remove the First 2 Characters Born After the Year 2000
+DELETE FROM Characters
+WHERE YEAR(birth_date)>2000
+ORDER BY birth_date ASC
+LIMIT 2;
+
+-- 2.Combine DELETE with LIMIT and OFFSET to Skip the First 3 Characters and Remove the Next 2 with a Job Title of 'Captain' and Born After the Year 2000
+DELETE FROM Characters
+WHERE character_id in (SELECT character_id 
+FROM (SELECT character_id FROM Characters WHERE job_title = 'Captain' AND YEAR(birth_date)>2000
+LIMIT 2 OFFSET 3) AS character_id_limited);
+#Solo hay dos registros que cumplan con ob_title = 'Captain' AND YEAR(birth_date)>2000
+
+-- Iteration 5: The encrypted note
+-- 5.1 Identifying whith a query Who is Vandar in the the characters table.
+SELECT*FROM Characters
+WHERE character_name LIKE '%Vandar%';
+
+-- 5.2 Search in the children table to see if Vandar has had any children or if there are any with a null name.
+SELECT * FROM children
+WHERE Id_Character in (SELECT character_id FROM Characters
+WHERE character_name LIKE '%Vandar%') OR Nombre IS NULL;
+
+-- 5.3 There are many children with null in the database, see if there are any that also match your date of birth 1995-09-21
+SELECT * FROM children
+WHERE Nombre IS NULL AND FechaNacimientoHijo = '1995-09-21';
+
+-- 5.4 Search with id_Character for a match in the characters table to confirm your suspicions.
+SELECT * FROM Characters
+WHERE character_id IN (
+SELECT Id_Character FROM children
+WHERE Nombre IS NULL AND FechaNacimientoHijo = '1995-09-21');
+
