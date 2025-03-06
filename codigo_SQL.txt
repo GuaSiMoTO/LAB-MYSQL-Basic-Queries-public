@@ -1,0 +1,52 @@
+-- Iteration 1: Basic Select Queries
+-- 1.1.Write a query to select distinct job titles from the Characters table.
+use Imperial_Database;
+SELECT distinct job_title FROM Characters;
+
+-- 1.2.Write a query to concatenate t-title he character_name and job_title of all characters.
+SELECT CONCAT(character_name, ' ', job_title) AS name_job
+FROM Characters WHERE character_name IS NOT NULL AND job_title IS NOT NULL;
+
+-- Iteration 2: Where,Order and limit Queries
+-- 1.Find planets whose names end with "ar" or have a population greater than 1,000,000 Using the LIKE clause and an additional condition on the population.
+SELECT * FROM Planets 
+WHERE planet_name LIKE '%ar' OR population > 1000000;
+
+-- 2.Find characters whose names contain the word "Skywalker" and were born after the year 2000
+SELECT * FROM Characters
+WHERE character_name LIKE '%Skywalker%' AND YEAR(birth_date)>2000;
+
+-- 3.Find missions with a defined status (not NULL) that ended after the year 2000
+SELECT * FROM Missions 
+WHERE `status` IS NOT NULL AND YEAR(end_date)>2000;
+
+-- 4.Find starships whose names contain the word "Falcon", have a defined service (not NULL), and a capacity greater than 5
+SELECT * FROM Ships
+WHERE ship_name LIKE '%Falcon%' AND in_service IS NOT NULL AND capacity>5;
+
+-- 5.Find battles that occurred in the year 1983 and do not have a defined outcome (NULL value)
+SELECT * FROM Battles
+WHERE YEAR(date)=1983 AND outcome IS NULL;
+
+-- 6.Find characters affiliated with the "Rebel Alliance" whose job title is not defined (NULL value) and were born on the planet "Tatooine"
+SELECT * FROM Characters
+WHERE affiliation = 'Rebel Alliance' AND job_title IS NULL AND home_planet = 'Tatooine';
+
+-- 7.Order Battles by Date in Descending Order
+SELECT * FROM Battles
+ORDER BY `date` DESC;
+
+-- 8.Combine ORDER BY with WHERE to Find and Sort Characters Born After 200
+SELECT * FROM Characters
+WHERE YEAR(birth_date)>'0200'
+ORDER BY birth_date ASC;
+
+-- 9.Limit the Number of Results for Planets to 5
+SELECT * FROM Planets LIMIT 5;
+
+-- 10.Use LIMIT with OFFSET to Skip the First 5 Characters and Return the Next 5
+
+
+-- 11.Combine LIMIT with ORDER BY and WHERE to Find and Limit Battles
+
+-- Iteration 3: Copy Data from Planets to a New Table Old_Planets
