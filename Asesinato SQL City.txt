@@ -1,0 +1,75 @@
+-- SOLUCION: 
+-- ASESINO es Jeremy Bowers
+-- CONTRATADO POR Miranda Priestly
+
+
+-- Primero vemos el reporte del asesinato
+SELECT * FROM crime_scene_report
+WHERE city = 'SQL City' AND date = 20180115 AND type = 'murder';
+
+-- Ahora buscar info de los testigos
+
+-- Primer testigo
+
+SELECT * FROM person
+WHERE address_street_name = 'Northwestern Dr'
+ORDER BY address_number DESC;
+
+-- Segundo testigo
+
+SELECT * FROM person
+WHERE address_street_name = 'Franklin Ave' AND name LIKE '%Annabel%';
+
+-- Accedo a sus entrevistas
+
+SELECT * FROM interview
+WHERE person_id = 14887 OR person_id = 16371;
+
+-- Compruebo numero de socio y gold member en el GYM
+
+SELECT * FROM get_fit_now_member
+WHERE id LIKE '48Z%' AND membership_status = 'gold'
+
+-- Hay 2 Sospechosos, busco sus carnet de conducir con su person_id del gym
+
+SELECT license_id, name FROM person
+WHERE id = 28819 OR id = 67318;
+
+-- busco la información en la información conductores con la matricula genero y id de los sospechosos
+
+SELECT* FROM drivers_license
+WHERE (plate_number LIKE '%H42W%' and gender = 'male') OR id = 423327 OR id = 17328;
+
+-- Tengo un MATCH con Jeremy Bowers
+-- Voy a comprobar la fecha de entrada del gym del 09 de enero
+-- El asesino es Jeremy Bowers, miro su entrevista y la del otro sospechoso
+
+SELECT * FROM interview
+WHERE person_id = 67318 OR person_id = 28819;
+
+-- Buscar quien lo contrato:
+-- Busco el ID de la persona con las características en la tabla de conductores:
+
+SELECT id FROM person
+WHERE license_id IN (SELECT id FROM drivers_license
+WHERE gender = 'female' AND hair_color = 'red' AND car_make LIKE '%Tesla%');
+
+-- consulto el ID de las personas que han ido al evento en diciemre 2017 y coincide con el id de conductores
+
+SELECT person_id FROM facebook_event_checkin
+WHERE (event_name = 'SQL Symphony Concert' AND date LIKE '201712%') AND person_id 
+IN (SELECT id FROM person
+WHERE license_id IN (SELECT id FROM drivers_license
+WHERE gender = 'female' AND hair_color = 'red' AND car_make LIKE '%Tesla%'));
+
+-- AQUI CONSULTO TODO JUNTO PARA OBTENER LA PERSONA QUE BUSCO
+
+SELECT * FROM person
+WHERE id IN (SELECT person_id FROM facebook_event_checkin
+WHERE (event_name = 'SQL Symphony Concert' AND date LIKE '201712%') AND person_id 
+IN (SELECT id FROM person
+WHERE license_id IN (SELECT id FROM drivers_license
+WHERE gender = 'female' AND hair_color = 'red' AND car_make LIKE '%Tesla%')));
+
+-- SOLUCION: ASESINO es Jeremy Bowers
+-- CONTRATADO POR Miranda Priestly
